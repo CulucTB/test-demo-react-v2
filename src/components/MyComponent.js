@@ -2,7 +2,7 @@
 // function component
 
 import React from "react";
-import UserInfor from "./UserInfor";
+import AddUserInfor from "./AddUserInfor";
 import DisplayInfor from "./DisplayInfor";
 
 class MyComponent extends React.Component {
@@ -14,18 +14,27 @@ class MyComponent extends React.Component {
         ]
     }
 
+    handleAddNewUser = (userObj) => {
+        console.log(">>> check data from parent: ", userObj)
+        this.setState({
+            // listUsers: [userObj, ...this.state.listUsers]
+            listUsers: [...this.state.listUsers, userObj]
+        })
 
+    }
     // JXS cho phep viet  trong html trong js
     // DRY :don't repeat youseft
     render() {
         return (
 
             <div>
-                <UserInfor />
+                <AddUserInfor
+                    handleAddNewUser={this.handleAddNewUser}
+                />
                 <br /><br />
                 <DisplayInfor
                     listUsers={this.state.listUsers}
-
+                    handleAddNewUser={this.handleAddNewUser}
                 />
             </div>
         );
