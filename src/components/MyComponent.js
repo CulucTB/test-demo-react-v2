@@ -4,10 +4,20 @@
 import React from "react";
 
 class MyComponent extends React.Component {
-    // JXS cho phep viet  trong html trong js   
-    render () {
+
+    state = {
+        name: 'CuLuc',
+        address: 'Hoi Dan It',
+        age: 26
+    };
+    // JXS cho phep viet  trong html trong js
+
+
+    render() {
         return (
-            <div> my first component </div>
+            <div>
+                My name is {this.state.name} and I'm from {this.state.address}
+            </div>
         );
 
     }
