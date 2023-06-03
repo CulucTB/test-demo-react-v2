@@ -15,12 +15,11 @@ class MyComponent extends React.Component {
     }
 
     handleAddNewUser = (userObj) => {
-        console.log(">>> check data from parent: ", userObj)
         this.setState({
             // listUsers: [userObj, ...this.state.listUsers]
             listUsers: [...this.state.listUsers, userObj]
         })
-
+        //khi để userObj ở đầu thì list sẽ hiện ở đầu ,còn ở cuối thì list sẽ hiện ở cuối 
     }
     // JXS cho phep viet  trong html trong js
     // DRY :don't repeat youseft
