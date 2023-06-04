@@ -16,10 +16,18 @@ class MyComponent extends React.Component {
 
     handleAddNewUser = (userObj) => {
         this.setState({
-            // listUsers: [userObj, ...this.state.listUsers]
-            listUsers: [...this.state.listUsers, userObj]
+            listUsers: [userObj, ...this.state.listUsers]
+            // listUsers: [...this.state.listUsers, userObj]
         })
         //khi để userObj ở đầu thì list sẽ hiện ở đầu ,còn ở cuối thì list sẽ hiện ở cuối 
+    }
+
+    handleDeleteUser = (userId) => {
+        let listUsersClone = this.state.listUsers;
+        listUsersClone = listUsersClone.filter(item => item.id !== userId)
+        this.setState({
+            listUsers: listUsersClone
+        })
     }
     // JXS cho phep viet  trong html trong js
     // DRY :don't repeat youseft
@@ -35,7 +43,7 @@ class MyComponent extends React.Component {
                     <br /><br />
                     <DisplayInfor
                         listUsers={this.state.listUsers}
-                        handleAddNewUser={this.handleAddNewUser}
+                        handleDeleteUser={this.handleDeleteUser}
                     />
 
                 </div>
