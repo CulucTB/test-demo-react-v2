@@ -69,7 +69,9 @@ const MyComponent = (props) => {
     )
 
     const handleAddNewUser = (userObj) => {
-        setListUsers(userObj, ...listUsers)
+        let newListUser = [userObj, ...listUsers]
+        setListUsers(newListUser);
+
 
         // this.setState({
         //     listUsers: [userObj, ...listUsers]

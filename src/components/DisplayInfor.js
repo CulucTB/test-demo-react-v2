@@ -53,7 +53,6 @@ const DisplayInfor = (props) => {
             <div className='display-infor-container'>
                 <div>
                     <span onClick={() => handleShowHideListUser}>
-
                         {isShowHideListUser === true ? "Hide list users" : "Show list users"}
                     </span>
                 </div>
